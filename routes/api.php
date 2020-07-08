@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('client/{id}', 'ClientController@get')->name('getClient');
 Route::get('clients', 'ClientController@getAll')->name('getClients');
 Route::post('client', 'ClientController@create')->name('addClient');
-Route::post('client/{id}', 'ClientController@update')->name('editClient');
+Route::put('client/{id}', 'ClientController@update')->name('editClient');
 Route::delete('client/{id}', 'ClientController@delete')->name('deleteClient');
 
 //Products
