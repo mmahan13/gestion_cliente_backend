@@ -19,15 +19,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Clients
-Route::get('client/{id}', 'ClientController@get')->name('getClient');
 Route::get('clients', 'ClientController@getAll')->name('getClients');
+Route::get('client/{id}', 'ClientController@get')->name('getClient');
 Route::post('client', 'ClientController@create')->name('addClient');
 Route::put('client/{id}', 'ClientController@update')->name('editClient');
 Route::delete('client/{id}', 'ClientController@delete')->name('deleteClient');
 
 //Products
-Route::get('product/{id}', 'ProductController@get')->name('getproduct');
 Route::get('products', 'ProductController@getAll')->name('getproduct');
-Route::post('product', 'ProductController@add')->name('addproduct');
-Route::post('product/{id}', 'ProductController@edit')->name('editproduct');
-Route::get('product/delete/{id}', 'ProductController@delete')->name('deleteproduct');
+Route::get('product/{id}', 'ProductController@get')->name('getproduct');
+Route::post('product', 'ProductController@create')->name('addproduct');
+Route::put('product/{id}', 'ProductController@update')->name('editproduct');
+Route::delete('product/{id}', 'ProductController@delete')->name('deleteproduct');
+
+//Orders Header
+Route::get('orders', 'OrderController@getAllHeaderOrder')->name('getorders');
+
+Route::post('order', 'OrderController@create')->name('createOrder');
+
+//Order Lines
+Route::get('lines/{id}', 'OrderController@getLines')->name('getLineOrder');
