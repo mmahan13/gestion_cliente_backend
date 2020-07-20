@@ -14,16 +14,16 @@ class ProductController extends Controller
     }
 
     public function getAll(){
-        $products = Product::all();
+        $products = Product::where('active', '1')->orderby('id', 'desc')->get();
         return $products;
     }
 
-    public function add(Request $request){
+    public function create(Request $request){
         $product = Product::create($request->all());
         return $product;
     }
 
-    public function edit($id, Request $request){
+    public function update($id, Request $request){
         $product = $this->get($id);
         $product->fill($request->all())->save();
         return $product;

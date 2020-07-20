@@ -8,6 +8,6 @@ class Product extends Model
 {
     protected $table = 'gestion.products';
     protected $fillable = [
-        'id_user', 'ref', 'name', 'descriptions', 'price'
+        'id_user', 'ref', 'name', 'descriptions', 'price','active'
     ];
 }
