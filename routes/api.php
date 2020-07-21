@@ -39,3 +39,6 @@ Route::post('order', 'OrderController@create')->name('createOrder');
 
 //Order Lines
 Route::get('lines/{id}', 'OrderController@getLines')->name('getLineOrder');
+
+//newORder
+Route::post('neworder','OrderController@createOrder');
