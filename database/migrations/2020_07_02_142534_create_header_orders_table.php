@@ -19,9 +19,8 @@ class CreateHeaderOrdersTable extends Migration
             $table->string('id_clients');
             $table->string('number_orders');
             $table->string('date');
-            $table->string('name');
             $table->string('status');
-            $table->string('total_orders');
+            $table->string('total');
             $table->timestamps();
         });
     }

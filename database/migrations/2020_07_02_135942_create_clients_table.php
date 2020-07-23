@@ -21,9 +21,9 @@ class CreateClientsTable extends Migration
             $table->string('razon_social');
             $table->string('cif');
             $table->string('email');
-            $table->string('telefono');
-            $table->string('direccion');
-            $table->string('activo');
+            $table->string('telephone');
+            $table->string('address');
+            $table->string('active');
             $table->timestamps();
         });
     }

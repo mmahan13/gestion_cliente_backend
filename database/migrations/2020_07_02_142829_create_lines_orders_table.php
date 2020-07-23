@@ -14,10 +14,13 @@ class CreateLinesOrdersTable extends Migration
     public function up()
     {
         Schema::create('lines_orders', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('id_header_orders');
             $table->string('id_products');
+            $table->string('name');
             $table->string('quantity');
+            $table->string('price');
+            $table->string('total');
             $table->timestamps();
         });
     }
